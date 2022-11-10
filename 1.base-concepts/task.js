@@ -33,11 +33,11 @@ function calculateTotalMortgage(percent, contribution, amount, date) {
   Number(amount);
 
   if (isNaN(percent)) {
-    return 'Параметр "Процентая ставка" содержит неправильное значение ' + '"' + percent + '"' + '.';
+    return `Параметр "Процентная ставка" содержит неправильное значение "${percent}".`;
     } else if (isNaN(contribution)) {
-      return 'Параметр "Начальный взнос" содержит неправильное значение ' + '"' + contribution + '"' + '.';
+      return `Параметр "Начальный взнос" содержит неправильное значение "${contribution}".`;
     } else if (isNaN(amount)) {
-      return 'Параметр "Общая стоимость" содержит неправильное значение ' + '"' + amount + '"' + '.';
+      return `Параметр "Общая стоимость" содержит неправильное значение "${amount}".`;
     } else {
       let creditPeriodInMilliseconds = new Date(datePayCredit - dateNow);
       let creditPeriodInMonths = Math.floor(creditPeriodInMilliseconds / millisecondsInMonth);
