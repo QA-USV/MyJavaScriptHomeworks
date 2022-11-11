@@ -2,22 +2,19 @@
 
 function solveEquation(a, b, c) {
 
-  let arr = [];
-  let discr = b ** 2 - 4 * a * c;
+  let resultsArray = [];
+  let discriminant = b ** 2 - 4 * a * c;
 
-  if (discr < 0) {
-    arr = [];
-  } 
-  if (discr === 0) {
+  if (discriminant === 0) {
     let d = -b / (2 * a);
-    arr.push(d);
+    resultsArray.push(d);
   } 
-  if (discr > 0) {
-    let e = (-b + Math.sqrt(discr) ) / (2 * a);
-    let f = (-b - Math.sqrt(discr) ) / (2 * a); 
-    arr.push(e, f);
+  if (discriminant > 0) {
+    let e = (-b + Math.sqrt(discriminant) ) / (2 * a);
+    let f = (-b - Math.sqrt(discriminant) ) / (2 * a); 
+    resultsArray.push(e, f);
   }
-  return arr;
+  return resultsArray;
 }
 
 function calculateTotalMortgage(percent, contribution, amount, date) {
