@@ -2,8 +2,8 @@
 
 function solveEquation(a, b, c) {
 
-  let resultsArray = [];
-  let discriminant = b ** 2 - 4 * a * c;
+  const resultsArray = [];
+  const discriminant = b ** 2 - 4 * a * c;
 
   if (discriminant === 0) {
     let d = -b / (2 * a);
@@ -20,11 +20,11 @@ function solveEquation(a, b, c) {
 function calculateTotalMortgage(percent, contribution, amount, date) {
   
   let totalAmount;
-  let p = percent / 100 / 12;
-  let s = amount - contribution;
-  let dateNow = Date.now();
-  let datePayCredit = new Date(date).getTime();
-  let millisecondsInMonth = 2592000000;
+  const p = percent / 100 / 12;
+  const s = amount - contribution;
+  const dateNow = Date.now();
+  const datePayCredit = new Date(date).getTime();
+  const millisecondsInMonth = 2592000000;
   Number(percent);
   Number(contribution);
   Number(amount);
