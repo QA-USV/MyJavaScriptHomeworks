@@ -22,7 +22,7 @@ function solveEquation(a, b, c) {
 
 function calculateTotalMortgage(percent, contribution, amount, date) {
   
-  let totalAmount = 0;
+  let totalAmount;
   let p = percent / 100 / 12;
   let s = amount - contribution;
   let dateNow = Date.now();
@@ -33,17 +33,17 @@ function calculateTotalMortgage(percent, contribution, amount, date) {
   Number(amount);
 
   if (isNaN(percent)) {
-    return `Параметр "Процентная ставка" содержит неправильное значение "${percent}".`;
+    return `Параметр "Процентная ставка" содержит неправильное значение "${percent}"`;
     } else if (isNaN(contribution)) {
-      return `Параметр "Начальный взнос" содержит неправильное значение "${contribution}".`;
+      return `Параметр "Начальный взнос" содержит неправильное значение "${contribution}"`;
     } else if (isNaN(amount)) {
-      return `Параметр "Общая стоимость" содержит неправильное значение "${amount}".`;
+      return `Параметр "Общая стоимость" содержит неправильное значение "${amount}"`;
     } else {
       let creditPeriodInMilliseconds = new Date(datePayCredit - dateNow);
       let creditPeriodInMonths = Math.floor(creditPeriodInMilliseconds / millisecondsInMonth);
       let n = creditPeriodInMonths;
       totalAmount = (s * (p + p / (((1 + p) ** n) - 1)) * n).toFixed(2);
-    return totalAmount;
+    return Number(totalAmount);
   }
 }
 
