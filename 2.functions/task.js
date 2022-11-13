@@ -27,6 +27,12 @@ function getArrayParams(...array) {
 }
 
 // Задание 2
+
+function makeWork(...arrOfArr) {
+const max = Math.max(...arrOfArr.map(e => e.reduce((a, b) => a + b, 0)));
+return max;
+}
+
 function worker(...array) {
   let sum = 0;
   for (let value of array) {
@@ -35,15 +41,17 @@ function worker(...array) {
   return sum;
 }
 
+
 function makeWork(...arrOfArr) {
-  let max = 0; 
-  func = worker;
-  for (let i = 0; i < arrOfArr.length; i++) {
-      if (worker(arrOfArr[i]) > max) {
-        max = func(array);
-      }
-    }
-  return max;
+const max = Math.max(worker.arrOfArr);
+return max;
+  // et max = 0; 
+  // for (let i = 0; i < arrOfArr.length; i++) {
+  //     if (worker(arrOfArr[i]) > max) {
+  //       max = Math.max(max, arrOfArr[i]);
+  //     }
+  //   }
+  // return max;
 }
 console.log(makeWork([1, 2, 3, 4], [10, 20, -10, -20]));
 
