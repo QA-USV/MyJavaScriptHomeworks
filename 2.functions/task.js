@@ -1,7 +1,8 @@
 // Задание 1
+//A function to count min, max and average value of an array. 
 
 'use strict';
-function getArrayParams(arr) {
+function getArrayParams(arr) { 
   const initialSum = 0;
   const sum = +arr.reduce((partialSum, elem) => partialSum + elem, initialSum); 
   let max = +arr.reduce((partialSum, elem) => Math.max(partialSum, elem), -Infinity);
@@ -12,7 +13,9 @@ function getArrayParams(arr) {
 }
   
 // Задание 2
-function worker(arr) {
+// A function to find the max sum of numbers of array among subarrays.
+
+function worker(arr) { // 
   const initialSum = 0;
   const sum = +arr.reduce((partialSum, elem) => partialSum + elem, initialSum);
   return sum;
@@ -23,9 +26,9 @@ function makeWork(arrOfArr, worker) {
   return max;
 }
 
-
-
 // Задание 3
+//A function to find the max absolute value of a number among subarrays. 
+
 function worker2(arr) {
   const maxInArray = +arr.reduce((partialSum, elem) => Math.max(partialSum, elem), -Infinity);
   const minInArray = +arr.reduce((partialSum, elem) => Math.min(partialSum, elem), Infinity);
