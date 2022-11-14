@@ -15,7 +15,7 @@ function getArrayParams(arr) {
 // Задание 2
 // A function to find the max sum of numbers of array among subarrays.
 
-const worker = function(arr) { // 
+const worker = function(arr) { 
   const sum = arr.reduce((partialSum, elem) => partialSum + elem, 0);
   return sum;
 }
