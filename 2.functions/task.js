@@ -4,8 +4,7 @@
 //A function to count min, max and average value of an array. 
 
 function getArrayParams(arr) { 
-  const initialSum = 0;
-  const sum = arr.reduce((partialSum, elem) => partialSum + elem, initialSum); 
+  const sum = arr.reduce((partialSum, elem) => partialSum + elem, 0); 
   let max = Math.max(...arr);
   let min = Math.min(...arr);
   let avg = +(sum / arr.length).toFixed(2);
@@ -17,8 +16,7 @@ function getArrayParams(arr) {
 // A function to find the max sum of numbers of array among subarrays.
 
 const worker = function(arr) { // 
-  const initialSum = 0;
-  const sum = arr.reduce((partialSum, elem) => partialSum + elem, initialSum);
+  const sum = arr.reduce((partialSum, elem) => partialSum + elem, 0);
   return sum;
 }
 
