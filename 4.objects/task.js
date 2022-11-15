@@ -14,9 +14,9 @@ class Student {
   addMark(...mark) {
     if (this.marks === undefined) {
       this.marks = mark;
-      } else {
+    } else {
       this.marks = [...this.marks, ...mark];
-      }
+    }
   }
     
   addMarks(...arr) {
@@ -32,7 +32,7 @@ class Student {
     const avg = +(sum / this.marks.length); 
     // More readable result is '+(sum / this.marks.length).toFixed(2)'. But the result will not meet the expected one. //
     return avg;
-    }
+  }
   
   exclude(reason) {
     delete this.subject;
