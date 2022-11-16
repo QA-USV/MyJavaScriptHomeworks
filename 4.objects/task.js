@@ -19,11 +19,11 @@ class Student {
     }
   }
     
-  addMarks(...arr) {
+  addMarks(...marks) {
     if (this.marks === undefined) {
-      this.marks = arr;
+      this.marks = marks;
     } else {
-      this.marks = [...this.marks, ...arr];
+      this.marks = [...this.marks, ...marks];
     }
   }
 
