@@ -30,7 +30,7 @@ class Student {
   }
 
   getAverage() {
-    const sum = this.marks.reduce((el, acc) => acc += el, 0);
+    const sum = this.marks.reduce((acc, el) => acc += el, 0);
     return sum / this.marks.length; 
   }
   
