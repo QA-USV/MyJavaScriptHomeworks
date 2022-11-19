@@ -1,5 +1,7 @@
 'use strict';
 
+//Task 1
+
 class Student {
   constructor(name, gender, age) {
     this.name = name;
@@ -29,9 +31,7 @@ class Student {
 
   getAverage() {
     const sum = this.marks.reduce((el, acc) => acc += el, 0);
-    const avg = +(sum / this.marks.length); 
-    // More readable result is '+(sum / this.marks.length).toFixed(2)'. But the result will not meet the expected one. //
-    return avg;
+    return sum / this.marks.length; 
   }
   
   exclude(reason) {
