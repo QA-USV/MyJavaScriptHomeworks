@@ -1,64 +1,36 @@
-
-// Задание 1
 'use strict';
 
-function getArrayParams(...array) {
-  let sum = 0; 
-  let avg = 0;
-  let min = +array[0];
-  let minEdge = -100;
-  let max = +array[array.length - 1];
-  let maxEdge = 100;
-  for (let i = 0; i < array.length; i++) {
-    if (array[i] < minEdge || array[i] > maxEdge) {
-      return (`'${array[i]}' is out of range from ${minEdge} to ${maxEdge}.`);
-    } 
-    if (array[i] < min) {
-      min = array[i];
-    } 
-    if (array[i] > max) {
-      max = array[i];
-    }
-    sum += array[i];
-    avg = (sum / array.length).toFixed(2);
-    avg = +avg;
-    }
+// Задание 1
+//A function to count min, max and average value of an array. 
+
+function getArrayParams(arr) { 
+  const sum = arr.reduce((partialSum, elem) => partialSum + elem, 0); 
+  let max = Math.max(...arr);
+  let min = Math.min(...arr);
+  let avg = +(sum / arr.length).toFixed(2);
+
   return { min: min, max: max, avg: avg };
 }
-
+  
 // Задание 2
+// A function to find the max sum of numbers of array among subarrays.
 
-function makeWork(...arrOfArr) {
-const max = Math.max(...arrOfArr.map(e => e.reduce((a, b) => a + b, 0)));
-return max;
-}
-
-function worker(...array) {
-  let sum = 0;
-  for (let value of array) {
-    sum += value;
-  }
+const worker = function(arr) { 
+  const sum = arr.reduce((partialSum, elem) => partialSum + elem, 0);
   return sum;
 }
 
-
-function makeWork(...arrOfArr) {
-const max = Math.max(worker.arrOfArr);
-return max;
-  // et max = 0; 
-  // for (let i = 0; i < arrOfArr.length; i++) {
-  //     if (worker(arrOfArr[i]) > max) {
-  //       max = Math.max(max, arrOfArr[i]);
-  //     }
-  //   }
-  // return max;
+function makeWork(arrOfArr, func) {
+  let max = arrOfArr.reduce((a, b) => Math.max(func(a), func(b)));
+  return max;
 }
-console.log(makeWork([1, 2, 3, 4], [10, 20, -10, -20]));
-
-
-
 
 // Задание 3
-function worker2(arr) {
-  // Ваш код
+//A function to find the max absolute value of a number in array.
+
+const worker2 = function(arr) {
+  const maxInArray = Math.max(...arr);
+  const minInArray = Math.min(...arr);
+  const absInArray = Math.abs(maxInArray - minInArray);
+  return absInArray;
 }
