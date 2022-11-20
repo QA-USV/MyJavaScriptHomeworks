@@ -15,10 +15,9 @@ function parseCount(value) {
 
 function validateCount(value) {
     try {
-       return parseCount(value);
+        return parseCount(value);
     } catch(error) {
-        return error;
-        
+        return error;    
     }
 }
 
@@ -39,14 +38,12 @@ class Triangle {
     }
 
     getPerimeter() {
-        this.perimeter = +(this.side1 + this.side2 + this.side3);
-        return this.perimeter;
+        return (this.side1 + this.side2 + this.side3);
     }
 
     getArea() {
-        const p = (this.side1 + this.side2 + this.side3) / 2;
-        this.area = +(Math.sqrt(p * (p - this.side1) * (p - this.side2) * (p - this.side3))).toFixed(3);
-        return this.area;
+        const p = this.getPerimeter() / 2;
+        return +(Math.sqrt(p * (p - this.side1) * (p - this.side2) * (p - this.side3))).toFixed(3);
     }  
 }
 
