@@ -97,41 +97,42 @@ class Student {
       this.name = name;
       this.gender = gender;
       this.age = age;
-      this.subjects = {};
+      this.subjects = [];
       }
     
     setSubject(subjectName) {
-        const subject = subjectName;
-        this.subjects[subject] = []
+        if (this.subjects[subjectName] === undefined) {
+        this.subjects[subjectName] = []; 
+        }
     }
       
     addMark(mark, subjectName) {
-        if (mark < 1 && mark > 5) {
-            return ('Оценка студента должна быть в диапазоне от 1 по 5');
-        } else {
-        if (this.subjects.subjectName === subjectName) {
-            this.subjects.subjectName.push(mark);
-        // } else 
-        //     this.subjects.subjectName === undefined;
-        //     this.setSubject(subjectName);
-        //     this.subjects.subjectName.push(mark);
-        // }
+        this.setSubject(subjectName);
+        if (mark < 1 || mark > 5) {
+            return ('Ошибка, оценка должна быть числом от 1 до 5');
+        } else 
+        this.subjects[subjectName].push(mark);       
     }
-}
-    }
-    
+        
     getAverageBySubject(subjectName) {
-        const {subjectName : newSub} = this.subjects;
-        // const result = this.subjects.find(subject => subject[subjectName] === subjectName);
-        const sum = newSub.reduce((acc, el) => acc += el, 0);
-        return sum / newSub.length; 
+        const arrayStr = this.subjects[subjectName];
+        let arrayNum = [];  
+        for (let i = 0; i < arrayStr.length; i++) {
+            arrayStr[i] = +arrayStr[i];
+            arrayNum.push(arrayStr[i]);
+        } 
+        return arrayNum.reduce((acc, el) => acc += el, 0) / arrayNum.length; 
     }
 
     getAverage() {
-        let arrMarks = Object.values(this.subjects).map(el => this.subjects[el]);
-        const sum = this.arrMarks.reduce((el, acc) => acc += el, 0);
-        return sum / this.subjects.length; 
-        }
+        const array = Object.keys(this.subjects).map(el => this.subjects[el]).flat();
+        let newArray = [];  
+        for (let i = 0; i < array.length; i++) {
+            array[i] = +array[i];
+            newArray.push(array[i]);
+        } 
+        return newArray.reduce((acc, el) => acc += el, 0) / newArray.length;
+    }
           
     exclude(reason) {
         delete this.subjects;
